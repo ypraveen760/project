@@ -1,11 +1,11 @@
-// src/components/Chart.js
+
 
 import React, { useEffect, useRef } from 'react';
 import { createChart } from 'lightweight-charts';
 
 const Chart = ({ historicalData }) => {
   const chartContainerRef = useRef();
-  const candleSeriesRef = useRef(null); // Ref to store the candle series
+  const candleSeriesRef = useRef(null); 
 
   useEffect(() => {
     if (chartContainerRef.current) {
@@ -42,7 +42,7 @@ const Chart = ({ historicalData }) => {
   }, [historicalData]);
 
   return (
-    <div ref={chartContainerRef} style={{ position: 'relative', width: '100%', height: '500px' }} />
+    <div className='relative w-10/12 h-96 border  border-black m-4 ' ref={chartContainerRef} style={{  }} />
   );
 };
 

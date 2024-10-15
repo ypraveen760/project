@@ -2959,25 +2959,32 @@ var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
 var _webSocketComponent = require("../component/WebSocketComponent");
 var _webSocketComponentDefault = parcelHelpers.interopDefault(_webSocketComponent);
+var _header = require("../component/Header");
+var _headerDefault = parcelHelpers.interopDefault(_header);
+var _footer = require("../component/Footer");
+var _footerDefault = parcelHelpers.interopDefault(_footer);
 const App = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "test"
-            }, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 7,
+                lineNumber: 9,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _webSocketComponentDefault.default), {}, void 0, false, {
                 fileName: "src/App.js",
-                lineNumber: 8,
+                lineNumber: 10,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
+                fileName: "src/App.js",
+                lineNumber: 11,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/App.js",
-        lineNumber: 6,
+        lineNumber: 8,
         columnNumber: 9
     }, undefined);
 };
@@ -2985,7 +2992,7 @@ _c = App;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
     fileName: "src/App.js",
-    lineNumber: 13,
+    lineNumber: 16,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -2996,7 +3003,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../component/WebSocketComponent":"bRXYm","react-dom/client":"lOjBx"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../component/WebSocketComponent":"bRXYm","react-dom/client":"lOjBx","../component/Header":"iUeZa","../component/Footer":"bbkcJ"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -5901,8 +5908,8 @@ var _chartDefault = parcelHelpers.interopDefault(_chart);
 var _s = $RefreshSig$();
 const WebSocketComponent = ()=>{
     _s();
-    const [symbol, setSymbol] = (0, _react.useState)("ethusdt"); // Default symbol
-    const [interval, setInterval] = (0, _react.useState)("1m"); // Default interval
+    const [symbol, setSymbol] = (0, _react.useState)("ethusdt");
+    const [interval, setInterval] = (0, _react.useState)("1m");
     const { klineData, historicalData, error } = (0, _useWebSocket.useWebSocket)(symbol, interval);
     const handleSymbolChange = (event)=>{
         setSymbol(event.target.value.toLowerCase());
@@ -5911,34 +5918,40 @@ const WebSocketComponent = ()=>{
         setInterval(event.target.value);
     };
     if (error) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "text-red-600",
         children: [
             "Error: ",
             error
         ]
     }, void 0, true, {
         fileName: "component/WebSocketComponent.js",
-        lineNumber: 21,
+        lineNumber: 19,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "m-12 bg-sky-50 text-gray-800 p-6 rounded-lg shadow-lg border border-black hover:drop-shadow-2xl ",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                className: "text-3xl font-bold mb-4",
                 children: "Cryptocurrency Charting Data"
             }, void 0, false, {
                 fileName: "component/WebSocketComponent.js",
-                lineNumber: 26,
+                lineNumber: 24,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "mb-4",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                        children: "Select Cryptocurrency: "
+                        className: "mr-4",
+                        children: "Select Cryptocurrency:"
                     }, void 0, false, {
                         fileName: "component/WebSocketComponent.js",
-                        lineNumber: 28,
+                        lineNumber: 27,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                        className: "border border-gray-300 bg-gray-100 text-gray-800 rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-500",
                         onChange: handleSymbolChange,
                         value: symbol,
                         children: [
@@ -5947,7 +5960,7 @@ const WebSocketComponent = ()=>{
                                 children: "ETH/USDT"
                             }, void 0, false, {
                                 fileName: "component/WebSocketComponent.js",
-                                lineNumber: 30,
+                                lineNumber: 33,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -5955,7 +5968,7 @@ const WebSocketComponent = ()=>{
                                 children: "BNB/USDT"
                             }, void 0, false, {
                                 fileName: "component/WebSocketComponent.js",
-                                lineNumber: 31,
+                                lineNumber: 34,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -5963,23 +5976,25 @@ const WebSocketComponent = ()=>{
                                 children: "DOT/USDT"
                             }, void 0, false, {
                                 fileName: "component/WebSocketComponent.js",
-                                lineNumber: 32,
+                                lineNumber: 35,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "component/WebSocketComponent.js",
-                        lineNumber: 29,
+                        lineNumber: 28,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                        children: "Select Interval: "
+                        className: "ml-4 mr-4",
+                        children: "Select Interval:"
                     }, void 0, false, {
                         fileName: "component/WebSocketComponent.js",
-                        lineNumber: 35,
+                        lineNumber: 38,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                        className: "border border-gray-300 bg-gray-100 text-gray-800 rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-500",
                         onChange: handleIntervalChange,
                         value: interval,
                         children: [
@@ -5988,15 +6003,15 @@ const WebSocketComponent = ()=>{
                                 children: "1 Minute"
                             }, void 0, false, {
                                 fileName: "component/WebSocketComponent.js",
-                                lineNumber: 37,
+                                lineNumber: 44,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
                                 value: "3m",
-                                children: "3 Minute"
+                                children: "3 Minutes"
                             }, void 0, false, {
                                 fileName: "component/WebSocketComponent.js",
-                                lineNumber: 38,
+                                lineNumber: 45,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -6004,7 +6019,7 @@ const WebSocketComponent = ()=>{
                                 children: "5 Minutes"
                             }, void 0, false, {
                                 fileName: "component/WebSocketComponent.js",
-                                lineNumber: 39,
+                                lineNumber: 46,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -6012,7 +6027,7 @@ const WebSocketComponent = ()=>{
                                 children: "15 Minutes"
                             }, void 0, false, {
                                 fileName: "component/WebSocketComponent.js",
-                                lineNumber: 40,
+                                lineNumber: 47,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -6020,7 +6035,7 @@ const WebSocketComponent = ()=>{
                                 children: "1 Hour"
                             }, void 0, false, {
                                 fileName: "component/WebSocketComponent.js",
-                                lineNumber: 41,
+                                lineNumber: 48,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
@@ -6028,29 +6043,30 @@ const WebSocketComponent = ()=>{
                                 children: "1 Day"
                             }, void 0, false, {
                                 fileName: "component/WebSocketComponent.js",
-                                lineNumber: 42,
+                                lineNumber: 49,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "component/WebSocketComponent.js",
-                        lineNumber: 36,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "component/WebSocketComponent.js",
-                lineNumber: 27,
+                lineNumber: 26,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _chartDefault.default), {
                 historicalData: historicalData[symbol] || []
             }, void 0, false, {
                 fileName: "component/WebSocketComponent.js",
-                lineNumber: 46,
+                lineNumber: 53,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                className: "text-xl font-semibold mt-6",
                 children: [
                     "Live Data of ",
                     symbol,
@@ -6058,77 +6074,114 @@ const WebSocketComponent = ()=>{
                 ]
             }, void 0, true, {
                 fileName: "component/WebSocketComponent.js",
-                lineNumber: 48,
+                lineNumber: 55,
                 columnNumber: 7
             }, undefined),
             klineData ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "mt-2 w-10/12 bg-gray-50 p-4 rounded shadow",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: [
-                            "Open: ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "Open:"
+                            }, void 0, false, {
+                                fileName: "component/WebSocketComponent.js",
+                                lineNumber: 58,
+                                columnNumber: 14
+                            }, undefined),
+                            " ",
                             klineData.open
                         ]
                     }, void 0, true, {
                         fileName: "component/WebSocketComponent.js",
-                        lineNumber: 51,
+                        lineNumber: 58,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: [
-                            "High: ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "High:"
+                            }, void 0, false, {
+                                fileName: "component/WebSocketComponent.js",
+                                lineNumber: 59,
+                                columnNumber: 14
+                            }, undefined),
+                            " ",
                             klineData.high
                         ]
                     }, void 0, true, {
                         fileName: "component/WebSocketComponent.js",
-                        lineNumber: 52,
+                        lineNumber: 59,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: [
-                            "Low: ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "Low:"
+                            }, void 0, false, {
+                                fileName: "component/WebSocketComponent.js",
+                                lineNumber: 60,
+                                columnNumber: 14
+                            }, undefined),
+                            " ",
                             klineData.low
                         ]
                     }, void 0, true, {
                         fileName: "component/WebSocketComponent.js",
-                        lineNumber: 53,
+                        lineNumber: 60,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: [
-                            "Close: ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "Close:"
+                            }, void 0, false, {
+                                fileName: "component/WebSocketComponent.js",
+                                lineNumber: 61,
+                                columnNumber: 14
+                            }, undefined),
+                            " ",
                             klineData.close
                         ]
                     }, void 0, true, {
                         fileName: "component/WebSocketComponent.js",
-                        lineNumber: 54,
+                        lineNumber: 61,
                         columnNumber: 11
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         children: [
-                            "Open Time: ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("strong", {
+                                children: "Open Time:"
+                            }, void 0, false, {
+                                fileName: "component/WebSocketComponent.js",
+                                lineNumber: 62,
+                                columnNumber: 14
+                            }, undefined),
+                            " ",
                             new Date(klineData.time * 1000).toLocaleString()
                         ]
                     }, void 0, true, {
                         fileName: "component/WebSocketComponent.js",
-                        lineNumber: 55,
+                        lineNumber: 62,
                         columnNumber: 11
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "component/WebSocketComponent.js",
-                lineNumber: 50,
+                lineNumber: 57,
                 columnNumber: 9
             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "mt-2",
                 children: "Loading..."
             }, void 0, false, {
                 fileName: "component/WebSocketComponent.js",
-                lineNumber: 58,
+                lineNumber: 65,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "component/WebSocketComponent.js",
-        lineNumber: 25,
+        lineNumber: 23,
         columnNumber: 5
     }, undefined);
 };
@@ -6234,7 +6287,6 @@ var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$6d6a.prelude(module);
 
 try {
-// src/components/Chart.js
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
@@ -6245,7 +6297,7 @@ var _s = $RefreshSig$();
 const Chart = ({ historicalData })=>{
     _s();
     const chartContainerRef = (0, _react.useRef)();
-    const candleSeriesRef = (0, _react.useRef)(null); // Ref to store the candle series
+    const candleSeriesRef = (0, _react.useRef)(null);
     (0, _react.useEffect)(()=>{
         if (chartContainerRef.current) {
             const chart = (0, _lightweightCharts.createChart)(chartContainerRef.current, {
@@ -6277,12 +6329,9 @@ const Chart = ({ historicalData })=>{
         historicalData
     ]);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "relative w-10/12 h-96 border  border-black m-4 ",
         ref: chartContainerRef,
-        style: {
-            position: "relative",
-            width: "100%",
-            height: "500px"
-        }
+        style: {}
     }, void 0, false, {
         fileName: "component/Chart.js",
         lineNumber: 45,
@@ -35792,6 +35841,787 @@ module.exports = require("ef03b89c8fe2794e");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}]},["9wh9R","1xC6H","2kQhy"], "2kQhy", "parcelRequire827b")
+},{}],"iUeZa":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8a60 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8a60.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _utils = require("../src/utils");
+function Header() {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
+        class: "pb-6 bg-white lg:pb-0",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            class: "px-4 mx-auto max-w-7xl sm:px-6 lg:px-8",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
+                    class: "flex items-center justify-between h-16 lg:h-20",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            class: "flex-shrink-0",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "#",
+                                title: "",
+                                class: "flex",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                    class: "w-auto h-12 xl:h-10",
+                                    src: (0, _utils.LOGO_LINK),
+                                    alt: "FinTarget-Logo"
+                                }, void 0, false, {
+                                    fileName: "component/Header.js",
+                                    lineNumber: 12,
+                                    columnNumber: 21
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "component/Header.js",
+                                lineNumber: 11,
+                                columnNumber: 17
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "component/Header.js",
+                            lineNumber: 10,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            type: "button",
+                            class: "inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                                    class: "block w-6 h-6",
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    fill: "none",
+                                    viewBox: "0 0 24 24",
+                                    stroke: "currentColor",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                        "stroke-linecap": "round",
+                                        "stroke-linejoin": "round",
+                                        "stroke-width": "2",
+                                        d: "M4 8h16M4 16h16"
+                                    }, void 0, false, {
+                                        fileName: "component/Header.js",
+                                        lineNumber: 19,
+                                        columnNumber: 21
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "component/Header.js",
+                                    lineNumber: 18,
+                                    columnNumber: 17
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                                    class: "hidden w-6 h-6",
+                                    xmlns: "http://www.w3.org/2000/svg",
+                                    fill: "none",
+                                    viewBox: "0 0 24 24",
+                                    stroke: "currentColor",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                        "stroke-linecap": "round",
+                                        "stroke-linejoin": "round",
+                                        "stroke-width": "2",
+                                        d: "M6 18L18 6M6 6l12 12"
+                                    }, void 0, false, {
+                                        fileName: "component/Header.js",
+                                        lineNumber: 24,
+                                        columnNumber: 21
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "component/Header.js",
+                                    lineNumber: 23,
+                                    columnNumber: 17
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "component/Header.js",
+                            lineNumber: 16,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            class: "hidden lg:flex lg:items-center lg:ml-auto lg:space-x-10",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    title: "",
+                                    class: "text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                    children: " Features "
+                                }, void 0, false, {
+                                    fileName: "component/Header.js",
+                                    lineNumber: 29,
+                                    columnNumber: 17
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    title: "",
+                                    class: "text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                    children: " Solutions "
+                                }, void 0, false, {
+                                    fileName: "component/Header.js",
+                                    lineNumber: 31,
+                                    columnNumber: 17
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    title: "",
+                                    class: "text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                    children: " Resources "
+                                }, void 0, false, {
+                                    fileName: "component/Header.js",
+                                    lineNumber: 33,
+                                    columnNumber: 17
+                                }, this),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    title: "",
+                                    class: "text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                    children: " Pricing "
+                                }, void 0, false, {
+                                    fileName: "component/Header.js",
+                                    lineNumber: 35,
+                                    columnNumber: 17
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "component/Header.js",
+                            lineNumber: 28,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                            href: "#",
+                            title: "",
+                            class: "items-center justify-center hidden px-4 py-3 ml-10 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md lg:inline-flex hover:bg-blue-700 focus:bg-blue-700",
+                            role: "button",
+                            children: " Get started now "
+                        }, void 0, false, {
+                            fileName: "component/Header.js",
+                            lineNumber: 38,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "component/Header.js",
+                    lineNumber: 9,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
+                    class: "pt-4 pb-6 bg-white border border-gray-200 rounded-md shadow-md lg:hidden",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            class: "flow-root",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                class: "flex flex-col px-6 -my-2 space-y-1",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                        href: "#",
+                                        title: "",
+                                        class: "inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                        children: " Features "
+                                    }, void 0, false, {
+                                        fileName: "component/Header.js",
+                                        lineNumber: 45,
+                                        columnNumber: 21
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                        href: "#",
+                                        title: "",
+                                        class: "inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                        children: " Solutions "
+                                    }, void 0, false, {
+                                        fileName: "component/Header.js",
+                                        lineNumber: 47,
+                                        columnNumber: 21
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                        href: "#",
+                                        title: "",
+                                        class: "inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                        children: " Resources "
+                                    }, void 0, false, {
+                                        fileName: "component/Header.js",
+                                        lineNumber: 49,
+                                        columnNumber: 21
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                        href: "#",
+                                        title: "",
+                                        class: "inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                        children: " Pricing "
+                                    }, void 0, false, {
+                                        fileName: "component/Header.js",
+                                        lineNumber: 51,
+                                        columnNumber: 21
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "component/Header.js",
+                                lineNumber: 44,
+                                columnNumber: 17
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "component/Header.js",
+                            lineNumber: 43,
+                            columnNumber: 13
+                        }, this),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            class: "px-6 mt-6",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "#",
+                                title: "",
+                                class: "inline-flex justify-center px-4 py-3 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md tems-center hover:bg-blue-700 focus:bg-blue-700",
+                                role: "button",
+                                children: " Get started now "
+                            }, void 0, false, {
+                                fileName: "component/Header.js",
+                                lineNumber: 56,
+                                columnNumber: 17
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "component/Header.js",
+                            lineNumber: 55,
+                            columnNumber: 13
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "component/Header.js",
+                    lineNumber: 42,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "component/Header.js",
+            lineNumber: 7,
+            columnNumber: 5
+        }, this)
+    }, void 0, false, {
+        fileName: "component/Header.js",
+        lineNumber: 6,
+        columnNumber: 5
+    }, this);
+}
+_c = Header;
+exports.default = Header;
+var _c;
+$RefreshReg$(_c, "Header");
+
+  $parcel$ReactRefreshHelpers$8a60.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../src/utils":"en4he"}],"en4he":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "LOGO_LINK", ()=>LOGO_LINK);
+parcelHelpers.export(exports, "processKlineData", ()=>processKlineData);
+const LOGO_LINK = "https://fintarget.in/assets/fintargetLogo-JCpOronY.png";
+const processKlineData = (kline)=>({
+        time: kline.t / 1000,
+        open: parseFloat(kline.o),
+        high: parseFloat(kline.h),
+        low: parseFloat(kline.l),
+        close: parseFloat(kline.c)
+    });
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bbkcJ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4218 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4218.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _utils = require("../src/utils");
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+            class: "py-10 bg-gray-50 sm:pt-16 lg:pt-24",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        class: "grid grid-cols-2 md:col-span-3 lg:grid-cols-6 gap-y-16 gap-x-12",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                class: "col-span-2 md:col-span-3 lg:col-span-2 lg:pr-8",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                        class: "w-auto h-9",
+                                        src: (0, _utils.LOGO_LINK),
+                                        alt: "Logo-link"
+                                    }, void 0, false, {
+                                        fileName: "component/Footer.js",
+                                        lineNumber: 11,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        class: "text-base leading-relaxed text-gray-600 mt-7",
+                                        children: "Elevate your trading experience with our easy-to-use automation platform. We are simplifying strategy automation for novices and seasoned traders with our multiple broking facilities. A one-stop solution for executing, monitoring, and exiting from your trades."
+                                    }, void 0, false, {
+                                        fileName: "component/Footer.js",
+                                        lineNumber: 13,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                        class: "flex items-center space-x-3 mt-9",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    title: "",
+                                                    class: "flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600",
+                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                                                        class: "w-4 h-4",
+                                                        xmlns: "http://www.w3.org/2000/svg",
+                                                        viewBox: "0 0 24 24",
+                                                        fill: "currentColor",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                                            d: "M19.633 7.997c.013.175.013.349.013.523 0 5.325-4.053 11.461-11.46 11.461-2.282 0-4.402-.661-6.186-1.809.324.037.636.05.973.05a8.07 8.07 0 0 0 5.001-1.721 4.036 4.036 0 0 1-3.767-2.793c.249.037.499.062.761.062.361 0 .724-.05 1.061-.137a4.027 4.027 0 0 1-3.23-3.953v-.05c.537.299 1.16.486 1.82.511a4.022 4.022 0 0 1-1.796-3.354c0-.748.199-1.434.548-2.032a11.457 11.457 0 0 0 8.306 4.215c-.062-.3-.1-.611-.1-.923a4.026 4.026 0 0 1 4.028-4.028c1.16 0 2.207.486 2.943 1.272a7.957 7.957 0 0 0 2.556-.973 4.02 4.02 0 0 1-1.771 2.22 8.073 8.073 0 0 0 2.319-.624 8.645 8.645 0 0 1-2.019 2.083z"
+                                                        }, void 0, false, {
+                                                            fileName: "component/Footer.js",
+                                                            lineNumber: 19,
+                                                            columnNumber: 33
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "component/Footer.js",
+                                                        lineNumber: 18,
+                                                        columnNumber: 29
+                                                    }, undefined)
+                                                }, void 0, false, {
+                                                    fileName: "component/Footer.js",
+                                                    lineNumber: 17,
+                                                    columnNumber: 25
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 16,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    title: "",
+                                                    class: "flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600",
+                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                                                        class: "w-4 h-4",
+                                                        xmlns: "http://www.w3.org/2000/svg",
+                                                        viewBox: "0 0 24 24",
+                                                        fill: "currentColor",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                                            d: "M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"
+                                                        }, void 0, false, {
+                                                            fileName: "component/Footer.js",
+                                                            lineNumber: 29,
+                                                            columnNumber: 33
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "component/Footer.js",
+                                                        lineNumber: 28,
+                                                        columnNumber: 29
+                                                    }, undefined)
+                                                }, void 0, false, {
+                                                    fileName: "component/Footer.js",
+                                                    lineNumber: 27,
+                                                    columnNumber: 25
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 26,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    title: "",
+                                                    class: "flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600",
+                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                                                        class: "w-4 h-4",
+                                                        xmlns: "http://www.w3.org/2000/svg",
+                                                        viewBox: "0 0 24 24",
+                                                        fill: "currentColor",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                                                d: "M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"
+                                                            }, void 0, false, {
+                                                                fileName: "component/Footer.js",
+                                                                lineNumber: 37,
+                                                                columnNumber: 33
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("circle", {
+                                                                cx: "16.806",
+                                                                cy: "7.207",
+                                                                r: "1.078"
+                                                            }, void 0, false, {
+                                                                fileName: "component/Footer.js",
+                                                                lineNumber: 38,
+                                                                columnNumber: 33
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                                                d: "M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"
+                                                            }, void 0, false, {
+                                                                fileName: "component/Footer.js",
+                                                                lineNumber: 39,
+                                                                columnNumber: 33
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "component/Footer.js",
+                                                        lineNumber: 36,
+                                                        columnNumber: 29
+                                                    }, undefined)
+                                                }, void 0, false, {
+                                                    fileName: "component/Footer.js",
+                                                    lineNumber: 35,
+                                                    columnNumber: 25
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 34,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    title: "",
+                                                    class: "flex items-center justify-center text-white transition-all duration-200 bg-gray-800 rounded-full w-7 h-7 hover:bg-blue-600 focus:bg-blue-600",
+                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("svg", {
+                                                        class: "w-4 h-4",
+                                                        xmlns: "http://www.w3.org/2000/svg",
+                                                        viewBox: "0 0 24 24",
+                                                        fill: "currentColor",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("path", {
+                                                            "fill-rule": "evenodd",
+                                                            "clip-rule": "evenodd",
+                                                            d: "M12.026 2c-5.509 0-9.974 4.465-9.974 9.974 0 4.406 2.857 8.145 6.821 9.465.499.09.679-.217.679-.481 0-.237-.008-.865-.011-1.696-2.775.602-3.361-1.338-3.361-1.338-.452-1.152-1.107-1.459-1.107-1.459-.905-.619.069-.605.069-.605 1.002.07 1.527 1.028 1.527 1.028.89 1.524 2.336 1.084 2.902.829.091-.645.351-1.085.635-1.334-2.214-.251-4.542-1.107-4.542-4.93 0-1.087.389-1.979 1.024-2.675-.101-.253-.446-1.268.099-2.64 0 0 .837-.269 2.742 1.021a9.582 9.582 0 0 1 2.496-.336 9.554 9.554 0 0 1 2.496.336c1.906-1.291 2.742-1.021 2.742-1.021.545 1.372.203 2.387.099 2.64.64.696 1.024 1.587 1.024 2.675 0 3.833-2.33 4.675-4.552 4.922.355.308.675.916.675 1.846 0 1.334-.012 2.41-.012 2.737 0 .267.178.577.687.479C19.146 20.115 22 16.379 22 11.974 22 6.465 17.535 2 12.026 2z"
+                                                        }, void 0, false, {
+                                                            fileName: "component/Footer.js",
+                                                            lineNumber: 49,
+                                                            columnNumber: 33
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "component/Footer.js",
+                                                        lineNumber: 48,
+                                                        columnNumber: 29
+                                                    }, undefined)
+                                                }, void 0, false, {
+                                                    fileName: "component/Footer.js",
+                                                    lineNumber: 47,
+                                                    columnNumber: 25
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 46,
+                                                columnNumber: 21
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "component/Footer.js",
+                                        lineNumber: 15,
+                                        columnNumber: 17
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "component/Footer.js",
+                                lineNumber: 10,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        class: "text-sm font-semibold tracking-widest text-gray-400 uppercase",
+                                        children: "Company"
+                                    }, void 0, false, {
+                                        fileName: "component/Footer.js",
+                                        lineNumber: 61,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                        class: "mt-6 space-y-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    title: "",
+                                                    class: "flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                                    children: " About "
+                                                }, void 0, false, {
+                                                    fileName: "component/Footer.js",
+                                                    lineNumber: 65,
+                                                    columnNumber: 25
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 64,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    title: "",
+                                                    class: "flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                                    children: " Features "
+                                                }, void 0, false, {
+                                                    fileName: "component/Footer.js",
+                                                    lineNumber: 69,
+                                                    columnNumber: 25
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 68,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    title: "",
+                                                    class: "flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                                    children: " Works "
+                                                }, void 0, false, {
+                                                    fileName: "component/Footer.js",
+                                                    lineNumber: 73,
+                                                    columnNumber: 25
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 72,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    title: "",
+                                                    class: "flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                                    children: " Career "
+                                                }, void 0, false, {
+                                                    fileName: "component/Footer.js",
+                                                    lineNumber: 77,
+                                                    columnNumber: 25
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 76,
+                                                columnNumber: 21
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "component/Footer.js",
+                                        lineNumber: 63,
+                                        columnNumber: 17
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "component/Footer.js",
+                                lineNumber: 60,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        class: "text-sm font-semibold tracking-widest text-gray-400 uppercase",
+                                        children: "Help"
+                                    }, void 0, false, {
+                                        fileName: "component/Footer.js",
+                                        lineNumber: 83,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                        class: "mt-6 space-y-4",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    title: "",
+                                                    class: "flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                                    children: " Customer Support "
+                                                }, void 0, false, {
+                                                    fileName: "component/Footer.js",
+                                                    lineNumber: 87,
+                                                    columnNumber: 25
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 86,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    title: "",
+                                                    class: "flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                                    children: " Live-Trade Calls "
+                                                }, void 0, false, {
+                                                    fileName: "component/Footer.js",
+                                                    lineNumber: 91,
+                                                    columnNumber: 25
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 90,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    title: "",
+                                                    class: "flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                                    children: " Terms & Conditions "
+                                                }, void 0, false, {
+                                                    fileName: "component/Footer.js",
+                                                    lineNumber: 95,
+                                                    columnNumber: 25
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 94,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    title: "",
+                                                    class: "flex text-base text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600",
+                                                    children: " Privacy Policy "
+                                                }, void 0, false, {
+                                                    fileName: "component/Footer.js",
+                                                    lineNumber: 99,
+                                                    columnNumber: 25
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 98,
+                                                columnNumber: 21
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "component/Footer.js",
+                                        lineNumber: 85,
+                                        columnNumber: 17
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "component/Footer.js",
+                                lineNumber: 82,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                class: "col-span-2 md:col-span-1 lg:col-span-2 lg:pl-8",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        class: "text-sm font-semibold tracking-widest text-gray-400 uppercase",
+                                        children: "Subscribe to newsletter"
+                                    }, void 0, false, {
+                                        fileName: "component/Footer.js",
+                                        lineNumber: 105,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                                        action: "#",
+                                        method: "POST",
+                                        class: "mt-6",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                                        for: "email",
+                                                        class: "sr-only",
+                                                        children: "Email"
+                                                    }, void 0, false, {
+                                                        fileName: "component/Footer.js",
+                                                        lineNumber: 109,
+                                                        columnNumber: 25
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                        type: "email",
+                                                        name: "email",
+                                                        id: "email",
+                                                        placeholder: "Enter your email",
+                                                        class: "block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:border-blue-600 caret-blue-600"
+                                                    }, void 0, false, {
+                                                        fileName: "component/Footer.js",
+                                                        lineNumber: 110,
+                                                        columnNumber: 25
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 108,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                type: "submit",
+                                                class: "inline-flex items-center justify-center px-6 py-4 mt-3 font-semibold text-white transition-all duration-200 bg-blue-600 rounded-md hover:bg-blue-700 focus:bg-blue-700",
+                                                children: "Subscribe"
+                                            }, void 0, false, {
+                                                fileName: "component/Footer.js",
+                                                lineNumber: 113,
+                                                columnNumber: 21
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "component/Footer.js",
+                                        lineNumber: 107,
+                                        columnNumber: 17
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "component/Footer.js",
+                                lineNumber: 104,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "component/Footer.js",
+                        lineNumber: 9,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {
+                        class: "mt-16 mb-10 border-gray-200"
+                    }, void 0, false, {
+                        fileName: "component/Footer.js",
+                        lineNumber: 118,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        class: "text-sm text-center text-gray-600",
+                        children: "\xa9 Copyright 2021, All Rights Reserved by Postcraft"
+                    }, void 0, false, {
+                        fileName: "component/Footer.js",
+                        lineNumber: 120,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "component/Footer.js",
+                lineNumber: 8,
+                columnNumber: 5
+            }, undefined)
+        }, void 0, false, {
+            fileName: "component/Footer.js",
+            lineNumber: 7,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
+        fileName: "component/Footer.js",
+        lineNumber: 6,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Footer;
+exports.default = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+
+  $parcel$ReactRefreshHelpers$4218.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../src/utils":"en4he"}]},["9wh9R","1xC6H","2kQhy"], "2kQhy", "parcelRequire827b")
 
 //# sourceMappingURL=index.7271efb6.js.map

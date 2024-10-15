@@ -1,11 +1,14 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import WebSocketComponent from "../component/WebSocketComponent"
+import Header from "../component/Header"
+import Footer from "../component/Footer"
 const App=()=>{
     return(
         <div>
-            <h1>test</h1>
+            <Header/>
             <WebSocketComponent/>
+            <Footer/>
         </div>
     )
 }
